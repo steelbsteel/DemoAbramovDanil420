@@ -37,5 +37,10 @@ namespace Lopushok.Pages
             }
             ProductList.ItemsSource = prInfoList;
         }
+
+        private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
     }
 }

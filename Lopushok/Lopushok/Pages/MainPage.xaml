@@ -12,7 +12,7 @@
         <StackPanel Orientation="Horizontal" Margin="30,3,30,0" VerticalAlignment="Top" Height="91" Grid.Row="1">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Поиск" HorizontalAlignment="Center"></TextBlock>
-                <TextBox Height="31" Width="503">
+                <TextBox x:Name="SearchTB" Height="31" Width="503" TextChanged="SearchTB_TextChanged">
 
                 </TextBox>
             </StackPanel>
@@ -32,9 +32,9 @@
         <ListView Margin="0,100,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  ScrollViewer.CanContentScroll="False" Grid.Row="1" x:Name="ProductList" BorderBrush="Transparent" Background="White" ScrollViewer.VerticalScrollBarVisibility="Visible"  d:ItemsSource="{d:SampleData ItemCount=20}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Width="1240" Margin="0 10 0 10">
-                        <Border BorderBrush="Black" BorderThickness="1">
-                            <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Margin="0 10 0 10">
+                        <Border Width="1280" BorderBrush="Black" BorderThickness="1">
+                            <StackPanel Orientation="Horizontal"  >
                                 <Image Height="60" Width="150" Margin="20">
                                     <Image.Style>
                                         <Style TargetType="Image">

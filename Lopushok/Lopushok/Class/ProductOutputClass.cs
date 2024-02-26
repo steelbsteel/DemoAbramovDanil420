@@ -28,7 +28,7 @@ namespace Lopushok.Class
             }
             if (materials.Length > 0)
             {
-                materials.Remove(materials.Length - 2);
+                materials = materials.Remove(materials.Length - 2);
             }
         }
     }
