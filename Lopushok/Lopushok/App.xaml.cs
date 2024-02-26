@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lopushok.DB;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace Lopushok
     /// </summary>
     public partial class App : Application
     {
+        public DemoEkzAbramov420Entities connection = new DemoEkzAbramov420Entities();
     }
 }
