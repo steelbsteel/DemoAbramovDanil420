@@ -26,10 +26,10 @@ namespace Lopushok.Pages
     public partial class MainPage : Page
     {
 
+        List<ProductOutputClass> prInfoList = new List<ProductOutputClass>();
         public MainPage()
         {
             InitializeComponent();
-            var prInfoList = new List<ProductOutputClass>();
             var prList = App.connection.Product.ToList();
             foreach(var product in prList)
             {
@@ -40,7 +40,21 @@ namespace Lopushok.Pages
 
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            var list = App.connection.Product.ToList();
+            var newlist = new List<ProductOutputClass>();
+            foreach(var item in list)
+            {
+                if (item.Title.ToLower().Contains(SearchTB.Text.ToLower()))
+                {
+                    newlist.Add(new ProductOutputClass(item));
+                }
+            }
+            ProductList.ItemsSource = newlist;
+
+            if(SearchTB.Text == "")
+            {
+                ProductList.ItemsSource = prInfoList;
+            }
         }
     }
 }
