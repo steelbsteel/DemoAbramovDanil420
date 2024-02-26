@@ -29,4 +29,4 @@
 
 ## Авторы
 
-* **Abramov Danil** - *Initial work* - [steelbsteel](https://github.com/steelbsteel)
+* **Абрамов Данил Дмитриевич 420П** - *Initial work* - [steelbsteel](https://github.com/steelbsteel)
