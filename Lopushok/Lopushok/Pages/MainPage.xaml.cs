@@ -1,4 +1,5 @@
-﻿using Lopushok.DB;
+﻿using Lopushok.Class;
+using Lopushok.DB;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -28,24 +29,13 @@ namespace Lopushok.Pages
         public MainPage()
         {
             InitializeComponent();
-            ProductCB.ItemsSource = App.connection.Product.ToList();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new OpenFileDialog();
-
-            if (window.ShowDialog() != true)
+            var prInfoList = new List<ProductOutputClass>();
+            var prList = App.connection.Product.ToList();
+            foreach(var product in prList)
             {
-                MessageBox.Show("Изображение не выбрано");
-                return;
+                prInfoList.Add(new ProductOutputClass(product));
             }
-            Product pr = ProductCB.SelectedItem as Product;
-
-            pr.Image = File.ReadAllBytes(window.FileName);
-            App.connection.Product.AddOrUpdate(pr);
-            App.connection.SaveChanges();
-            MessageBox.Show("успешно обновили фотку");
+            ProductList.ItemsSource = prInfoList;
         }
     }
 }

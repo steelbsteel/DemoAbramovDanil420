@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:Lopushok"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Gabriola"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
     </Application.Resources>
 </Application>

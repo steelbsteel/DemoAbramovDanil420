@@ -35,11 +35,12 @@
                     <StackPanel Orientation="Vertical" Width="1240" Margin="0 10 0 10">
                         <Border BorderBrush="Black" BorderThickness="1">
                             <StackPanel Orientation="Horizontal">
-                                <Image Height="60" Width="150" Source="{Binding Image}" Margin="20">
+                                <Image Height="60" Width="150" Margin="20">
                                     <Image.Style>
                                         <Style TargetType="Image">
+                                            <Setter Property="Source" Value="{Binding product.Image}"/>
                                             <Style.Triggers>
-                                                <DataTrigger  Binding="{Binding Image}" Value="null">
+                                                <DataTrigger  Binding="{Binding product.Image}" Value="{x:Null}">
                                                     <Setter Property="Source" Value="/Images/picture.png"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -47,14 +48,29 @@
                                     </Image.Style>
                                 </Image>
                                 <StackPanel Orientation="Vertical">
-                                    <StackPanel Orientation="Horizontal" Width="700">
-                                        <TextBlock Text="{Binding ProductType.Title}"></TextBlock>
+                                    <StackPanel Orientation="Horizontal" Width="800">
+                                        <TextBlock Text="{Binding productType}"></TextBlock>
                                         <TextBlock Text=" | "></TextBlock>
-                                        <TextBlock Text="{Binding Title}"></TextBlock>
+                                        <TextBlock Text="{Binding product.Title}"></TextBlock>
                                     </StackPanel>
-                                    <TextBlock FontSize="18" Text="{Binding Materials}"></TextBlock>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Width="500" FontSize="18" Text="{Binding materials}"></TextBlock>
                                 </StackPanel>
-                                <TextBlock Text="{Binding Stoimost}"></TextBlock>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Стоймость:"></TextBlock>
+                                    <TextBlock>
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Text" Value="{Binding cost}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding cost}" Value="0">
+                                                        <Setter Property="Text" Value="Не определено"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </StackPanel>
+    
                             </StackPanel>
                         </Border>
                     </StackPanel>
