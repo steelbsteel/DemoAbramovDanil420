@@ -33,7 +33,7 @@
           <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Article" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MinCost" Type="int" Nullable="false" />
-          <Property Name="Image" Type="varchar" MaxLength="150" />
+          <Property Name="Image" Type="image" />
           <Property Name="CountOfWorkers" Type="int" Nullable="false" />
           <Property Name="idWorkshop" Type="int" Nullable="false" />
           <Property Name="idProductType" Type="int" Nullable="false" />
@@ -221,7 +221,7 @@
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Article" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MinCost" Type="Int32" Nullable="false" />
-          <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="CountOfWorkers" Type="Int32" Nullable="false" />
           <Property Name="idWorkshop" Type="Int32" Nullable="false" />
           <Property Name="idProductType" Type="Int32" Nullable="false" />
@@ -346,7 +346,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DemoEkzAbramov420Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DemoEkzAbramov420Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Material" EntityType="Self.Material" />
           <EntitySet Name="MaterialType" EntityType="Self.MaterialType" />
           <EntitySet Name="Product" EntityType="Self.Product" />
@@ -385,7 +385,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DemoEkzAbramov420ModelContainer" CdmEntityContainer="DemoEkzAbramov420Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DemoEkzAbramov420ModelContainer" CdmEntityContainer="DemoEkzAbramov420Entities1">
           <EntitySetMapping Name="Material">
             <EntityTypeMapping TypeName="DemoEkzAbramov420Model.Material">
               <MappingFragment StoreEntitySet="Material">

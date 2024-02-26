@@ -14,6 +14,6 @@ namespace Lopushok
     /// </summary>
     public partial class App : Application
     {
-        public DemoEkzAbramov420Entities connection = new DemoEkzAbramov420Entities();
+        public static DemoEkzAbramov420Entities1 connection = new DemoEkzAbramov420Entities1();
     }
 }

@@ -24,7 +24,7 @@ namespace Lopushok.DB
         public string Title { get; set; }
         public string Article { get; set; }
         public int MinCost { get; set; }
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public int CountOfWorkers { get; set; }
         public int idWorkshop { get; set; }
         public int idProductType { get; set; }
